@@ -105,7 +105,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
     post_id = db.Column(db.Integer)
-    text = db.Column(db.Text(4294000000))
+    text = db.Column(db.Text())
     type = db.Column(db.String(100), default='post')
     created_at = db.Column(db.DateTime, default=func.now())
     updated_at = db.Column(db.DateTime, default=func.now(), onupdate=func.now())
@@ -118,7 +118,7 @@ class ErrorLog(db.Model):
     function = db.Column(db.String(100))
     location = db.Column(db.String(255))
     message = db.Column(db.Text())
-    traceback = db.Column(db.Text(4294000000))
+    traceback = db.Column(db.Text())
     version = db.Column(db.String(100), default=__version__)
     created_at = db.Column(db.DateTime, default=func.now())
 
